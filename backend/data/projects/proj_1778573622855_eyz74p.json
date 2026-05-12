@@ -1,0 +1,44 @@
+{
+  "id": "proj_1778573622855_eyz74p",
+  "name": "分镜测试",
+  "style": "真人",
+  "status": "created",
+  "createdAt": "2026-05-12T08:13:42.855Z",
+  "updatedAt": "2026-05-12T08:13:44.911Z",
+  "assets": {
+    "characters": [],
+    "scenes": [],
+    "props": []
+  },
+  "script": "第一场 - 办公室\n李明：这次裁员名单里有你。\n林远：我明白了。",
+  "scriptParsed": {
+    "scenes": [
+      {
+        "sceneId": 1,
+        "location": "第一场 - 办公室",
+        "summary": "",
+        "characters": [
+          "李明",
+          "林远"
+        ],
+        "dialogue": [
+          {
+            "character": "李明",
+            "text": "这次裁员名单里有你。"
+          },
+          {
+            "character": "林远",
+            "text": "我明白了。"
+          }
+        ]
+      }
+    ],
+    "entities": [],
+    "title": "解析剧本"
+  },
+  "storyboard": null,
+  "groups": null,
+  "prompts": null,
+  "generation": null,
+  "manifest": null
+}

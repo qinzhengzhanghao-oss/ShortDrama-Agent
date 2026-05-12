@@ -1,0 +1,150 @@
+{
+  "id": "proj_1778573597464_djkest",
+  "name": "LLM测试_test_90737535",
+  "style": "真人",
+  "status": "created",
+  "createdAt": "2026-05-12T08:13:17.464Z",
+  "updatedAt": "2026-05-12T08:13:27.714Z",
+  "assets": {
+    "characters": [
+      {
+        "id": "ent_1778573599523_8k3h61",
+        "name": "林远",
+        "type": "characters",
+        "variants": [],
+        "createdAt": "2026-05-12T08:13:19.523Z"
+      },
+      {
+        "id": "ent_1778573601577_6kaywh",
+        "name": "李明",
+        "type": "characters",
+        "variants": [],
+        "createdAt": "2026-05-12T08:13:21.577Z"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "ent_1778573603625_qd7wu1",
+        "name": "办公室",
+        "type": "scenes",
+        "variants": [],
+        "createdAt": "2026-05-12T08:13:23.625Z"
+      },
+      {
+        "id": "ent_1778573605680_n5guqq",
+        "name": "咖啡馆",
+        "type": "scenes",
+        "variants": [],
+        "createdAt": "2026-05-12T08:13:25.680Z"
+      }
+    ],
+    "props": []
+  },
+  "script": "第一场 - 深夜办公室\n\n林远坐在电脑前，屏幕的蓝光映在他疲惫的脸上。墙上的时钟指向凌晨两点。\n\n林远（自言自语）：这次的项目方案，必须在下周一前拿出来。\n\n电话铃声突然响起。林远看了一眼来电显示，犹豫了一下，接起电话。\n\n李明（电话里）：林远，我是李明。听说你在做新方案？我想跟你谈谈合作的事。\n\n林远（警惕地）：李总？您不是已经……\n\n李明（打断）：过去的事不提了。明天下午三点，老地方见。\n\n电话挂断。林远盯着手机屏幕，眉头紧锁。\n\n第二场 - 咖啡馆\n\n林远提前十分钟到了咖啡馆。他选了一个靠窗的位置，可以看清门口进来的每一个人。\n\n李明推门进来，径直走向林远的桌子。他看起来比上次见面苍老了一些。\n\n李明：好久不见。\n\n林远：确实。\n\n两人沉默了几秒。服务员走过来，李明要了一杯美式。\n\n李明：我知道你恨我。但这次我是认真的。\n\n林远的嘴角露出一丝苦笑。",
+  "scriptParsed": {
+    "scenes": [
+      {
+        "sceneId": 1,
+        "location": "第一场 - 深夜办公室",
+        "summary": "",
+        "characters": [
+          "林远（自言自语）",
+          "李明（电话里）",
+          "林远（警惕地）",
+          "李明（打断）"
+        ],
+        "dialogue": [
+          {
+            "character": "narrator",
+            "text": "林远坐在电脑前，屏幕的蓝光映在他疲惫的脸上。墙上的时钟指向凌晨两点。"
+          },
+          {
+            "character": "林远（自言自语）",
+            "text": "这次的项目方案，必须在下周一前拿出来。"
+          },
+          {
+            "character": "narrator",
+            "text": "电话铃声突然响起。林远看了一眼来电显示，犹豫了一下，接起电话。"
+          },
+          {
+            "character": "李明（电话里）",
+            "text": "林远，我是李明。听说你在做新方案？我想跟你谈谈合作的事。"
+          },
+          {
+            "character": "林远（警惕地）",
+            "text": "李总？您不是已经……"
+          },
+          {
+            "character": "李明（打断）",
+            "text": "过去的事不提了。明天下午三点，老地方见。"
+          },
+          {
+            "character": "narrator",
+            "text": "电话挂断。林远盯着手机屏幕，眉头紧锁。"
+          }
+        ]
+      },
+      {
+        "sceneId": 2,
+        "location": "第二场 - 咖啡馆",
+        "summary": "",
+        "characters": [
+          "李明",
+          "林远"
+        ],
+        "dialogue": [
+          {
+            "character": "narrator",
+            "text": "林远提前十分钟到了咖啡馆。他选了一个靠窗的位置，可以看清门口进来的每一个人。"
+          },
+          {
+            "character": "narrator",
+            "text": "李明推门进来，径直走向林远的桌子。他看起来比上次见面苍老了一些。"
+          },
+          {
+            "character": "李明",
+            "text": "好久不见。"
+          },
+          {
+            "character": "林远",
+            "text": "确实。"
+          },
+          {
+            "character": "narrator",
+            "text": "两人沉默了几秒。服务员走过来，李明要了一杯美式。"
+          },
+          {
+            "character": "李明",
+            "text": "我知道你恨我。但这次我是认真的。"
+          },
+          {
+            "character": "narrator",
+            "text": "林远的嘴角露出一丝苦笑。"
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "name": "李明",
+        "type": "character",
+        "bound": true,
+        "boundId": "ent_1778573601577_6kaywh",
+        "boundType": "characters"
+      },
+      {
+        "name": "林远",
+        "type": "character",
+        "bound": true,
+        "boundId": "ent_1778573599523_8k3h61",
+        "boundType": "characters"
+      }
+    ],
+    "title": "解析剧本"
+  },
+  "storyboard": null,
+  "groups": null,
+  "prompts": null,
+  "generation": null,
+  "manifest": null
+}

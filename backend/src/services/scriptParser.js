@@ -5,7 +5,7 @@
  * 当前为模拟实现，接入真实 LLM 时替换 parseScript 方法
  */
 
-const { callLLM } = require('./llmService');
+const llmService = require('./llmService');
 
 class ScriptParser {
   /**
@@ -64,7 +64,7 @@ ${content.substring(0, 30000)}
 只返回JSON，不要其他说明文字。`;
 
     try {
-      const result = await callLLM(prompt);
+      const result = await llmService.callLLM(prompt);
       return this.parseResult(result, assets);
     } catch (err) {
       // 降级：返回基础解析

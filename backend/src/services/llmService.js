@@ -152,4 +152,3 @@ class LLMService {
 
 const llmService = new LLMService();
 module.exports = llmService;
-module.exports.callLLM = (prompt, opts) => llmService.callLLM(prompt, opts);

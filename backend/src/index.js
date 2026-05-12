@@ -8,6 +8,28 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 
+// 加载 .env 文件（如果有的话）
+try {
+  const envPath = path.join(__dirname, '..', '.env');
+  if (fs.existsSync(envPath)) {
+    const envContent = fs.readFileSync(envPath, 'utf-8');
+    envContent.split('\n').forEach(line => {
+      line = line.trim();
+      if (!line || line.startsWith('#')) return;
+      const eqIdx = line.indexOf('=');
+      if (eqIdx === -1) return;
+      const key = line.substring(0, eqIdx).trim();
+      const val = line.substring(eqIdx + 1).trim();
+      if (!process.env[key]) {
+        process.env[key] = val;
+      }
+    });
+    console.log('📝 已加载 .env 配置文件');
+  }
+} catch (e) {
+  // 忽略 .env 加载错误
+}
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 

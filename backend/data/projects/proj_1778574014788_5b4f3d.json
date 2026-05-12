@@ -1,0 +1,295 @@
+{
+  "id": "proj_1778574014788_5b4f3d",
+  "name": "分镜测试",
+  "style": "真人",
+  "status": "created",
+  "createdAt": "2026-05-12T08:20:14.788Z",
+  "updatedAt": "2026-05-12T08:20:27.897Z",
+  "assets": {
+    "characters": [],
+    "scenes": [],
+    "props": []
+  },
+  "script": "第一场 - 办公室\n李明：这次裁员名单里有你。\n林远：我明白了。",
+  "scriptParsed": {
+    "scenes": [
+      {
+        "sceneId": 1,
+        "location": "办公室",
+        "summary": "李明通知林远裁员名单中有他，林远表示接受。",
+        "characters": [
+          "李明",
+          "林远"
+        ],
+        "parsed": true,
+        "dialogue": [
+          {
+            "character": "李明",
+            "text": "这次裁员名单里有你。"
+          },
+          {
+            "character": "林远",
+            "text": "我明白了。"
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "name": "李明",
+        "type": "character",
+        "bound": false,
+        "boundId": null,
+        "boundType": null
+      },
+      {
+        "name": "林远",
+        "type": "character",
+        "bound": false,
+        "boundId": null,
+        "boundType": null
+      },
+      {
+        "name": "办公室",
+        "type": "scene",
+        "bound": false,
+        "boundId": null,
+        "boundType": null
+      }
+    ],
+    "title": null
+  },
+  "storyboard": {
+    "shots": [
+      {
+        "id": 1,
+        "duration": 5,
+        "shotType": "中景",
+        "camera": "固定",
+        "scene": "办公室",
+        "characters": [
+          "李明",
+          "林远"
+        ],
+        "actions": "李明坐在办公桌后，身体前倾，双手交叉放在桌上，视线平稳地看向对面的林远。",
+        "expression": "表情平静，但眼神带着一丝严肃",
+        "facialAU": "AU1(眉毛上提)+AU4(轻皱眉)",
+        "dialogue": "这次裁员名单里有你。",
+        "sound": "空调低鸣声",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 2,
+        "duration": 4,
+        "shotType": "近景",
+        "camera": "缓慢推进",
+        "scene": "办公室",
+        "characters": [
+          "林远"
+        ],
+        "actions": "林远正坐在椅子上，听到李明的话后，身体微微一顿，随即微微点头，目光低垂看向桌面。",
+        "expression": "先是瞳孔微缩，随后嘴角放松，透出平静接受",
+        "facialAU": "AU1(眉毛上提)+AU15(嘴角下压)",
+        "dialogue": "",
+        "sound": "纸张翻动声（远处）",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 3,
+        "duration": 4.5,
+        "shotType": "中近景",
+        "camera": "固定",
+        "scene": "办公室",
+        "characters": [
+          "林远"
+        ],
+        "actions": "林远从椅子上站起，右手抓起桌上的背包，转身朝门口走去，脚步平稳。",
+        "expression": "面无表情，但眼神空洞，嘴唇紧闭",
+        "facialAU": "AU4(轻皱眉)+AU23(嘴唇紧闭)",
+        "dialogue": "我明白了。",
+        "sound": "椅子轻微滑动声、脚步声",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 4,
+        "duration": 3.5,
+        "shotType": "特写",
+        "camera": "固定",
+        "scene": "办公室",
+        "characters": [
+          "李明"
+        ],
+        "actions": "李明看着林远离去的背影，右手食指轻轻敲击桌面，然后垂眼看向桌上文件。",
+        "expression": "眉头微蹙，嘴角带着一丝无奈的苦笑",
+        "facialAU": "AU4(皱眉)+AU12(嘴角上翘)",
+        "dialogue": "",
+        "sound": "指节敲击桌面声、门关合声",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      }
+    ]
+  },
+  "groups": [
+    {
+      "groupId": "Group_01",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 5,
+          "shotType": "中景",
+          "camera": "固定",
+          "scene": "办公室",
+          "characters": [
+            "李明",
+            "林远"
+          ],
+          "actions": "李明坐在办公桌后，身体前倾，双手交叉放在桌上，视线平稳地看向对面的林远。",
+          "expression": "表情平静，但眼神带着一丝严肃",
+          "facialAU": "AU1(眉毛上提)+AU4(轻皱眉)",
+          "dialogue": "这次裁员名单里有你。",
+          "sound": "空调低鸣声",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 2,
+          "duration": 4,
+          "shotType": "近景",
+          "camera": "缓慢推进",
+          "scene": "办公室",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远正坐在椅子上，听到李明的话后，身体微微一顿，随即微微点头，目光低垂看向桌面。",
+          "expression": "先是瞳孔微缩，随后嘴角放松，透出平静接受",
+          "facialAU": "AU1(眉毛上提)+AU15(嘴角下压)",
+          "dialogue": "",
+          "sound": "纸张翻动声（远处）",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 3,
+          "duration": 4.5,
+          "shotType": "中近景",
+          "camera": "固定",
+          "scene": "办公室",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远从椅子上站起，右手抓起桌上的背包，转身朝门口走去，脚步平稳。",
+          "expression": "面无表情，但眼神空洞，嘴唇紧闭",
+          "facialAU": "AU4(轻皱眉)+AU23(嘴唇紧闭)",
+          "dialogue": "我明白了。",
+          "sound": "椅子轻微滑动声、脚步声",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 4,
+          "duration": 3.5,
+          "shotType": "特写",
+          "camera": "固定",
+          "scene": "办公室",
+          "characters": [
+            "李明"
+          ],
+          "actions": "李明看着林远离去的背影，右手食指轻轻敲击桌面，然后垂眼看向桌上文件。",
+          "expression": "眉头微蹙，嘴角带着一丝无奈的苦笑",
+          "facialAU": "AU4(皱眉)+AU12(嘴角上翘)",
+          "dialogue": "",
+          "sound": "指节敲击桌面声、门关合声",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        }
+      ],
+      "totalDuration": 17
+    }
+  ],
+  "prompts": [
+    {
+      "groupId": "Group_01",
+      "prompt": "# Group_01 - 分镜测试\n总时长: 17秒\n\n--- 镜头 1 ---\n时间: 0s - 5s\n景别: 中景 | 运镜: 固定\n角色: 李明, 林远\n动作: 李明坐在办公桌后，身体前倾，双手交叉放在桌上，视线平稳地看向对面的林远。\n表情: AU1(眉毛上提)+AU4(轻皱眉) (表情平静，但眼神带着一丝严肃)\n台词: 这次裁员名单里有你。\n音效: 空调低鸣声\n\n--- 镜头 2 ---\n时间: 5s - 9s\n景别: 近景 | 运镜: 缓慢推进\n角色: 林远\n动作: 林远正坐在椅子上，听到李明的话后，身体微微一顿，随即微微点头，目光低垂看向桌面。\n表情: AU1(眉毛上提)+AU15(嘴角下压) (先是瞳孔微缩，随后嘴角放松，透出平静接受)\n音效: 纸张翻动声（远处）\n\n--- 镜头 3 ---\n时间: 9s - 13.5s\n景别: 中近景 | 运镜: 固定\n角色: 林远\n动作: 林远从椅子上站起，右手抓起桌上的背包，转身朝门口走去，脚步平稳。\n表情: AU4(轻皱眉)+AU23(嘴唇紧闭) (面无表情，但眼神空洞，嘴唇紧闭)\n台词: 我明白了。\n音效: 椅子轻微滑动声、脚步声\n\n--- 镜头 4 ---\n时间: 13.5s - 17s\n景别: 特写 | 运镜: 固定\n角色: 李明\n动作: 李明看着林远离去的背影，右手食指轻轻敲击桌面，然后垂眼看向桌上文件。\n表情: AU4(皱眉)+AU12(嘴角上翘) (眉头微蹙，嘴角带着一丝无奈的苦笑)\n音效: 指节敲击桌面声、门关合声\n",
+      "timelineShots": [
+        {
+          "shotId": 1,
+          "startTime": 0,
+          "endTime": 5,
+          "duration": 5,
+          "shotType": "中景",
+          "camera": "固定",
+          "characters": [
+            "李明",
+            "林远"
+          ],
+          "actions": "李明坐在办公桌后，身体前倾，双手交叉放在桌上，视线平稳地看向对面的林远。",
+          "expression": "表情平静，但眼神带着一丝严肃",
+          "facialAU": "AU1(眉毛上提)+AU4(轻皱眉)",
+          "dialogue": "这次裁员名单里有你。",
+          "sound": "空调低鸣声",
+          "isBridge": false
+        },
+        {
+          "shotId": 2,
+          "startTime": 5,
+          "endTime": 9,
+          "duration": 4,
+          "shotType": "近景",
+          "camera": "缓慢推进",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远正坐在椅子上，听到李明的话后，身体微微一顿，随即微微点头，目光低垂看向桌面。",
+          "expression": "先是瞳孔微缩，随后嘴角放松，透出平静接受",
+          "facialAU": "AU1(眉毛上提)+AU15(嘴角下压)",
+          "dialogue": "",
+          "sound": "纸张翻动声（远处）",
+          "isBridge": false
+        },
+        {
+          "shotId": 3,
+          "startTime": 9,
+          "endTime": 13.5,
+          "duration": 4.5,
+          "shotType": "中近景",
+          "camera": "固定",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远从椅子上站起，右手抓起桌上的背包，转身朝门口走去，脚步平稳。",
+          "expression": "面无表情，但眼神空洞，嘴唇紧闭",
+          "facialAU": "AU4(轻皱眉)+AU23(嘴唇紧闭)",
+          "dialogue": "我明白了。",
+          "sound": "椅子轻微滑动声、脚步声",
+          "isBridge": false
+        },
+        {
+          "shotId": 4,
+          "startTime": 13.5,
+          "endTime": 17,
+          "duration": 3.5,
+          "shotType": "特写",
+          "camera": "固定",
+          "characters": [
+            "李明"
+          ],
+          "actions": "李明看着林远离去的背影，右手食指轻轻敲击桌面，然后垂眼看向桌上文件。",
+          "expression": "眉头微蹙，嘴角带着一丝无奈的苦笑",
+          "facialAU": "AU4(皱眉)+AU12(嘴角上翘)",
+          "dialogue": "",
+          "sound": "指节敲击桌面声、门关合声",
+          "isBridge": false
+        }
+      ],
+      "referenceImages": [],
+      "bridgePrompt": null,
+      "locked": false,
+      "confirmed": false
+    }
+  ],
+  "generation": null,
+  "manifest": null
+}

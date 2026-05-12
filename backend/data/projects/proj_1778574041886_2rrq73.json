@@ -1,0 +1,898 @@
+{
+  "id": "proj_1778574041886_2rrq73",
+  "name": "全流程测试",
+  "style": "真人",
+  "status": "created",
+  "createdAt": "2026-05-12T08:20:41.886Z",
+  "updatedAt": "2026-05-12T08:21:17.350Z",
+  "assets": {
+    "characters": [
+      {
+        "id": "ent_1778574043918_ut7a4y",
+        "name": "林远",
+        "type": "characters",
+        "variants": [],
+        "createdAt": "2026-05-12T08:20:43.918Z"
+      },
+      {
+        "id": "ent_1778574045966_eq5ko1",
+        "name": "李明",
+        "type": "characters",
+        "variants": [],
+        "createdAt": "2026-05-12T08:20:45.966Z"
+      },
+      {
+        "id": "ent_1778574048021_o9g05v",
+        "name": "张伟",
+        "type": "characters",
+        "variants": [],
+        "createdAt": "2026-05-12T08:20:48.021Z"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "ent_1778574050053_vsr9yd",
+        "name": "办公室",
+        "type": "scenes",
+        "variants": [],
+        "createdAt": "2026-05-12T08:20:50.053Z"
+      },
+      {
+        "id": "ent_1778574052071_7j9977",
+        "name": "咖啡馆",
+        "type": "scenes",
+        "variants": [],
+        "createdAt": "2026-05-12T08:20:52.071Z"
+      }
+    ],
+    "props": []
+  },
+  "script": "第一场 - 深夜办公室\n林远坐在电脑前，屏幕的蓝光映在他疲惫的脸上。\n电话铃声突然响起。林远看了一眼来电显示，犹豫了一下，接起电话。\n李明（电话里）：林远，我是李明。听说你在做新方案？我想跟你谈谈合作的事。\n林远（警惕地）：李总？您不是已经……\n李明（打断）：过去的事不提了。明天下午三点，老地方见。\n电话挂断。林远盯着手机屏幕，眉头紧锁。\n\n第二场 - 咖啡馆\n林远提前十分钟到了咖啡馆。他选了一个靠窗的位置。\n李明推门进来，径直走向林远的桌子。\n李明：好久不见。\n林远：确实。\n两人沉默了几秒。李明要了一杯美式。\n李明：我知道你恨我。但这次我是认真的。\n",
+  "scriptParsed": {
+    "scenes": [
+      {
+        "sceneId": 1,
+        "location": "办公室",
+        "summary": "林远在深夜办公室接到李明电话，李明提出合作邀约，约定明天见面。",
+        "characters": [
+          "林远",
+          "李明"
+        ],
+        "parsed": true,
+        "dialogue": [
+          {
+            "character": "narrator",
+            "text": "林远坐在电脑前，屏幕的蓝光映在他疲惫的脸上。电话铃声突然响起。林远看了一眼来电显示，犹豫了一下，接起电话。"
+          },
+          {
+            "character": "李明",
+            "text": "林远，我是李明。听说你在做新方案？我想跟你谈谈合作的事。"
+          },
+          {
+            "character": "林远",
+            "text": "李总？您不是已经……"
+          },
+          {
+            "character": "李明",
+            "text": "过去的事不提了。明天下午三点，老地方见。"
+          },
+          {
+            "character": "narrator",
+            "text": "电话挂断。林远盯着手机屏幕，眉头紧锁。"
+          }
+        ]
+      },
+      {
+        "sceneId": 2,
+        "location": "咖啡馆",
+        "summary": "林远提前到达咖啡馆，李明随后到来，两人沉默后李明表态。",
+        "characters": [
+          "林远",
+          "李明"
+        ],
+        "parsed": true,
+        "dialogue": [
+          {
+            "character": "narrator",
+            "text": "林远提前十分钟到了咖啡馆。他选了一个靠窗的位置。李明推门进来，径直走向林远的桌子。"
+          },
+          {
+            "character": "李明",
+            "text": "好久不见。"
+          },
+          {
+            "character": "林远",
+            "text": "确实。"
+          },
+          {
+            "character": "narrator",
+            "text": "两人沉默了几秒。李明要了一杯美式。"
+          },
+          {
+            "character": "李明",
+            "text": "我知道你恨我。但这次我是认真的。"
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "name": "林远",
+        "type": "character",
+        "bound": true,
+        "boundId": "ent_1778574043918_ut7a4y",
+        "boundType": "characters"
+      },
+      {
+        "name": "李明",
+        "type": "character",
+        "bound": true,
+        "boundId": "ent_1778574045966_eq5ko1",
+        "boundType": "characters"
+      },
+      {
+        "name": "张伟",
+        "type": "character",
+        "bound": true,
+        "boundId": "ent_1778574048021_o9g05v",
+        "boundType": "characters"
+      },
+      {
+        "name": "办公室",
+        "type": "scene",
+        "bound": true,
+        "boundId": "ent_1778574050053_vsr9yd",
+        "boundType": "scenes"
+      },
+      {
+        "name": "咖啡馆",
+        "type": "scene",
+        "bound": true,
+        "boundId": "ent_1778574052071_7j9977",
+        "boundType": "scenes"
+      }
+    ],
+    "title": null
+  },
+  "storyboard": {
+    "shots": [
+      {
+        "id": 1,
+        "duration": 4,
+        "shotType": "中景",
+        "camera": "固定",
+        "scene": "办公室",
+        "characters": [
+          "林远"
+        ],
+        "actions": "林远坐在电脑前，身体前倾，右手在键盘上打字，屏幕蓝光映在脸上。手指停顿，直起身。",
+        "expression": "疲惫专注，眉毛放松",
+        "facialAU": "AU4(轻微皱眉)+AU7(眼皮微垂)",
+        "dialogue": "",
+        "sound": "键盘打字声（渐弱）",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 2,
+        "duration": 3,
+        "shotType": "特写",
+        "camera": "固定",
+        "scene": "办公室",
+        "characters": [
+          "林远"
+        ],
+        "actions": "林远的手伸向手机，屏幕显示来电“李明”。手指在屏幕上悬停一秒，然后接听。",
+        "expression": "眼神从屏幕移到手机，嘴角微动",
+        "facialAU": "AU1(眉毛微抬)+AU14(嘴角微张)",
+        "dialogue": "",
+        "sound": "电话铃声（持续）",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 3,
+        "duration": 4,
+        "shotType": "近景",
+        "camera": "缓慢推进",
+        "scene": "办公室",
+        "characters": [
+          "林远"
+        ],
+        "actions": "林远将手机放在耳边，身体靠在椅背上，眼睛望着窗外。",
+        "expression": "眉头微皱，目光若有所思",
+        "facialAU": "AU4(皱眉)+AU17(下巴前伸)",
+        "dialogue": "（李明电话声）林远，我是李明。听说你在做新方案？我想跟你谈谈合作的事。",
+        "sound": "电话通话声（低沉）",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 4,
+        "duration": 3.5,
+        "shotType": "特写",
+        "camera": "固定",
+        "scene": "办公室",
+        "characters": [
+          "林远"
+        ],
+        "actions": "林远嘴唇微动，准备说话，又停下。手指在桌面上轻敲两下。",
+        "expression": "惊讶转为克制的平静，眼神闪烁",
+        "facialAU": "AU1(眉毛微抬)+AU5(眼睛睁大)+AU14(嘴角微张)",
+        "dialogue": "李总？您不是已经……",
+        "sound": "环境音（空调低鸣）",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 5,
+        "duration": 4,
+        "shotType": "全景",
+        "camera": "固定",
+        "scene": "办公室",
+        "characters": [
+          "林远"
+        ],
+        "actions": "林远坐在椅子上，手肘撑在桌面，目光低垂。电话中传来声音。",
+        "expression": "眉头紧锁，嘴唇紧抿",
+        "facialAU": "AU4(皱眉)+AU15(嘴角下压)",
+        "dialogue": "（李明电话声）过去的事不提了。明天下午三点，老地方见。",
+        "sound": "电话挂断声（短促）",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 6,
+        "duration": 3,
+        "shotType": "特写",
+        "camera": "固定",
+        "scene": "办公室",
+        "characters": [
+          "林远"
+        ],
+        "actions": "林远的手慢慢放下手机，手机屏幕亮着，显示通话结束。手指在屏幕上滑动，又停下。",
+        "expression": "眉头紧锁，目光锐利",
+        "facialAU": "AU4(皱眉)+AU7(眼睛微眯)",
+        "dialogue": "",
+        "sound": "环境音（钟表滴答）",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 7,
+        "duration": 3,
+        "shotType": "中景",
+        "camera": "固定",
+        "scene": "咖啡馆",
+        "characters": [
+          "林远"
+        ],
+        "actions": "林远推门走进咖啡馆，环顾四周，走向靠窗的座位，坐下。",
+        "expression": "表情平静，但眼神扫视",
+        "facialAU": "AU4(轻微皱眉)+AU7(眼睛微眯)",
+        "dialogue": "",
+        "sound": "咖啡馆嘈杂声、门铃叮当声",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 8,
+        "duration": 3.5,
+        "shotType": "远景",
+        "camera": "固定",
+        "scene": "咖啡馆",
+        "characters": [
+          "李明"
+        ],
+        "actions": "李明从门口进来，径直走向林远的桌子，步伐沉稳。",
+        "expression": "表情严肃，目光直视前方",
+        "facialAU": "AU2(眉毛上抬)+AU17(下巴前伸)",
+        "dialogue": "",
+        "sound": "咖啡馆嘈杂声、脚步声",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 9,
+        "duration": 2.5,
+        "shotType": "近景",
+        "camera": "固定",
+        "scene": "咖啡馆",
+        "characters": [
+          "李明"
+        ],
+        "actions": "李明在对面坐下，身体微前倾，双手放在桌上。",
+        "expression": "嘴角微动，眼神平静",
+        "facialAU": "AU12(嘴角微抬)+AU4(轻微皱眉)",
+        "dialogue": "好久不见。",
+        "sound": "椅子拉动声",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 10,
+        "duration": 2.5,
+        "shotType": "特写",
+        "camera": "固定",
+        "scene": "咖啡馆",
+        "characters": [
+          "林远"
+        ],
+        "actions": "林远抬起眼睛，与李明对视一下，又移开目光，手指在杯沿上滑动。",
+        "expression": "眼神回避，嘴角微抿",
+        "facialAU": "AU4(皱眉)+AU15(嘴角下压)",
+        "dialogue": "确实。",
+        "sound": "环境音（咖啡机蒸汽声）",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 11,
+        "duration": 3.5,
+        "shotType": "中景",
+        "camera": "固定",
+        "scene": "咖啡馆",
+        "characters": [
+          "林远",
+          "李明"
+        ],
+        "actions": "两人沉默，林远低头看桌，李明望着窗外。服务生端咖啡过来，李明接过咖啡杯。",
+        "expression": "林远面无表情，李明目光深远",
+        "facialAU": "林远:AU4(皱眉)+AU15(嘴角下压); 李明:AU4(轻微皱眉)+AU7(眼睛微眯)",
+        "dialogue": "",
+        "sound": "杯子放在桌上的轻响",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      },
+      {
+        "id": 12,
+        "duration": 3,
+        "shotType": "近景",
+        "camera": "缓慢推进",
+        "scene": "咖啡馆",
+        "characters": [
+          "李明"
+        ],
+        "actions": "李明端起咖啡杯，轻抿一口，放下杯子，目光直视林远。",
+        "expression": "表情认真，眼神坚定",
+        "facialAU": "AU1(眉毛微抬)+AU17(下巴前伸)",
+        "dialogue": "我知道你恨我。但这次我是认真的。",
+        "sound": "环境音（咖啡杯碰撞声）",
+        "isBridgeShot": false,
+        "bridgeToGroup": null
+      }
+    ]
+  },
+  "groups": [
+    {
+      "groupId": "Group_01",
+      "shots": [
+        {
+          "id": 1,
+          "duration": 4,
+          "shotType": "中景",
+          "camera": "固定",
+          "scene": "办公室",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远坐在电脑前，身体前倾，右手在键盘上打字，屏幕蓝光映在脸上。手指停顿，直起身。",
+          "expression": "疲惫专注，眉毛放松",
+          "facialAU": "AU4(轻微皱眉)+AU7(眼皮微垂)",
+          "dialogue": "",
+          "sound": "键盘打字声（渐弱）",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 2,
+          "duration": 3,
+          "shotType": "特写",
+          "camera": "固定",
+          "scene": "办公室",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远的手伸向手机，屏幕显示来电“李明”。手指在屏幕上悬停一秒，然后接听。",
+          "expression": "眼神从屏幕移到手机，嘴角微动",
+          "facialAU": "AU1(眉毛微抬)+AU14(嘴角微张)",
+          "dialogue": "",
+          "sound": "电话铃声（持续）",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 3,
+          "duration": 4,
+          "shotType": "近景",
+          "camera": "缓慢推进",
+          "scene": "办公室",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远将手机放在耳边，身体靠在椅背上，眼睛望着窗外。",
+          "expression": "眉头微皱，目光若有所思",
+          "facialAU": "AU4(皱眉)+AU17(下巴前伸)",
+          "dialogue": "（李明电话声）林远，我是李明。听说你在做新方案？我想跟你谈谈合作的事。",
+          "sound": "电话通话声（低沉）",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 4,
+          "duration": 3.5,
+          "shotType": "特写",
+          "camera": "固定",
+          "scene": "办公室",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远嘴唇微动，准备说话，又停下。手指在桌面上轻敲两下。",
+          "expression": "惊讶转为克制的平静，眼神闪烁",
+          "facialAU": "AU1(眉毛微抬)+AU5(眼睛睁大)+AU14(嘴角微张)",
+          "dialogue": "李总？您不是已经……",
+          "sound": "环境音（空调低鸣）",
+          "isBridgeShot": true,
+          "bridgeToGroup": "Group_02"
+        }
+      ],
+      "totalDuration": 14.5
+    },
+    {
+      "groupId": "Group_02",
+      "shots": [
+        {
+          "id": 4,
+          "duration": 3.5,
+          "shotType": "特写",
+          "camera": "固定",
+          "scene": "办公室",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远嘴唇微动，准备说话，又停下。手指在桌面上轻敲两下。",
+          "expression": "惊讶转为克制的平静，眼神闪烁",
+          "facialAU": "AU1(眉毛微抬)+AU5(眼睛睁大)+AU14(嘴角微张)",
+          "dialogue": "李总？您不是已经……",
+          "sound": "环境音（空调低鸣）",
+          "isBridgeShot": true,
+          "bridgeToGroup": "Group_02"
+        },
+        {
+          "id": 5,
+          "duration": 4,
+          "shotType": "全景",
+          "camera": "固定",
+          "scene": "办公室",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远坐在椅子上，手肘撑在桌面，目光低垂。电话中传来声音。",
+          "expression": "眉头紧锁，嘴唇紧抿",
+          "facialAU": "AU4(皱眉)+AU15(嘴角下压)",
+          "dialogue": "（李明电话声）过去的事不提了。明天下午三点，老地方见。",
+          "sound": "电话挂断声（短促）",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 6,
+          "duration": 3,
+          "shotType": "特写",
+          "camera": "固定",
+          "scene": "办公室",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远的手慢慢放下手机，手机屏幕亮着，显示通话结束。手指在屏幕上滑动，又停下。",
+          "expression": "眉头紧锁，目光锐利",
+          "facialAU": "AU4(皱眉)+AU7(眼睛微眯)",
+          "dialogue": "",
+          "sound": "环境音（钟表滴答）",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 7,
+          "duration": 3,
+          "shotType": "中景",
+          "camera": "固定",
+          "scene": "咖啡馆",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远推门走进咖啡馆，环顾四周，走向靠窗的座位，坐下。",
+          "expression": "表情平静，但眼神扫视",
+          "facialAU": "AU4(轻微皱眉)+AU7(眼睛微眯)",
+          "dialogue": "",
+          "sound": "咖啡馆嘈杂声、门铃叮当声",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 8,
+          "duration": 3.5,
+          "shotType": "远景",
+          "camera": "固定",
+          "scene": "咖啡馆",
+          "characters": [
+            "李明"
+          ],
+          "actions": "李明从门口进来，径直走向林远的桌子，步伐沉稳。",
+          "expression": "表情严肃，目光直视前方",
+          "facialAU": "AU2(眉毛上抬)+AU17(下巴前伸)",
+          "dialogue": "",
+          "sound": "咖啡馆嘈杂声、脚步声",
+          "isBridgeShot": true,
+          "bridgeToGroup": "Group_03"
+        }
+      ],
+      "totalDuration": 17
+    },
+    {
+      "groupId": "Group_03",
+      "shots": [
+        {
+          "id": 8,
+          "duration": 3.5,
+          "shotType": "远景",
+          "camera": "固定",
+          "scene": "咖啡馆",
+          "characters": [
+            "李明"
+          ],
+          "actions": "李明从门口进来，径直走向林远的桌子，步伐沉稳。",
+          "expression": "表情严肃，目光直视前方",
+          "facialAU": "AU2(眉毛上抬)+AU17(下巴前伸)",
+          "dialogue": "",
+          "sound": "咖啡馆嘈杂声、脚步声",
+          "isBridgeShot": true,
+          "bridgeToGroup": "Group_03"
+        },
+        {
+          "id": 9,
+          "duration": 2.5,
+          "shotType": "近景",
+          "camera": "固定",
+          "scene": "咖啡馆",
+          "characters": [
+            "李明"
+          ],
+          "actions": "李明在对面坐下，身体微前倾，双手放在桌上。",
+          "expression": "嘴角微动，眼神平静",
+          "facialAU": "AU12(嘴角微抬)+AU4(轻微皱眉)",
+          "dialogue": "好久不见。",
+          "sound": "椅子拉动声",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 10,
+          "duration": 2.5,
+          "shotType": "特写",
+          "camera": "固定",
+          "scene": "咖啡馆",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远抬起眼睛，与李明对视一下，又移开目光，手指在杯沿上滑动。",
+          "expression": "眼神回避，嘴角微抿",
+          "facialAU": "AU4(皱眉)+AU15(嘴角下压)",
+          "dialogue": "确实。",
+          "sound": "环境音（咖啡机蒸汽声）",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 11,
+          "duration": 3.5,
+          "shotType": "中景",
+          "camera": "固定",
+          "scene": "咖啡馆",
+          "characters": [
+            "林远",
+            "李明"
+          ],
+          "actions": "两人沉默，林远低头看桌，李明望着窗外。服务生端咖啡过来，李明接过咖啡杯。",
+          "expression": "林远面无表情，李明目光深远",
+          "facialAU": "林远:AU4(皱眉)+AU15(嘴角下压); 李明:AU4(轻微皱眉)+AU7(眼睛微眯)",
+          "dialogue": "",
+          "sound": "杯子放在桌上的轻响",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        },
+        {
+          "id": 12,
+          "duration": 3,
+          "shotType": "近景",
+          "camera": "缓慢推进",
+          "scene": "咖啡馆",
+          "characters": [
+            "李明"
+          ],
+          "actions": "李明端起咖啡杯，轻抿一口，放下杯子，目光直视林远。",
+          "expression": "表情认真，眼神坚定",
+          "facialAU": "AU1(眉毛微抬)+AU17(下巴前伸)",
+          "dialogue": "我知道你恨我。但这次我是认真的。",
+          "sound": "环境音（咖啡杯碰撞声）",
+          "isBridgeShot": false,
+          "bridgeToGroup": null
+        }
+      ],
+      "totalDuration": 15
+    }
+  ],
+  "prompts": [
+    {
+      "groupId": "Group_01",
+      "prompt": "# Group_01 - 全流程测试\n总时长: 14.5秒\n\n--- 镜头 1 ---\n时间: 0s - 4s\n景别: 中景 | 运镜: 固定\n角色: 林远\n动作: 林远坐在电脑前，身体前倾，右手在键盘上打字，屏幕蓝光映在脸上。手指停顿，直起身。\n表情: AU4(轻微皱眉)+AU7(眼皮微垂) (疲惫专注，眉毛放松)\n音效: 键盘打字声（渐弱）\n\n--- 镜头 2 ---\n时间: 4s - 7s\n景别: 特写 | 运镜: 固定\n角色: 林远\n动作: 林远的手伸向手机，屏幕显示来电“李明”。手指在屏幕上悬停一秒，然后接听。\n表情: AU1(眉毛微抬)+AU14(嘴角微张) (眼神从屏幕移到手机，嘴角微动)\n音效: 电话铃声（持续）\n\n--- 镜头 3 ---\n时间: 7s - 11s\n景别: 近景 | 运镜: 缓慢推进\n角色: 林远\n动作: 林远将手机放在耳边，身体靠在椅背上，眼睛望着窗外。\n表情: AU4(皱眉)+AU17(下巴前伸) (眉头微皱，目光若有所思)\n台词: （李明电话声）林远，我是李明。听说你在做新方案？我想跟你谈谈合作的事。\n音效: 电话通话声（低沉）\n\n--- 镜头 4 [接点镜头] ---\n时间: 11s - 14.5s\n景别: 特写 | 运镜: 固定\n角色: 林远\n动作: 林远嘴唇微动，准备说话，又停下。手指在桌面上轻敲两下。\n表情: AU1(眉毛微抬)+AU5(眼睛睁大)+AU14(嘴角微张) (惊讶转为克制的平静，眼神闪烁)\n台词: 李总？您不是已经……\n音效: 环境音（空调低鸣）\n",
+      "timelineShots": [
+        {
+          "shotId": 1,
+          "startTime": 0,
+          "endTime": 4,
+          "duration": 4,
+          "shotType": "中景",
+          "camera": "固定",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远坐在电脑前，身体前倾，右手在键盘上打字，屏幕蓝光映在脸上。手指停顿，直起身。",
+          "expression": "疲惫专注，眉毛放松",
+          "facialAU": "AU4(轻微皱眉)+AU7(眼皮微垂)",
+          "dialogue": "",
+          "sound": "键盘打字声（渐弱）",
+          "isBridge": false
+        },
+        {
+          "shotId": 2,
+          "startTime": 4,
+          "endTime": 7,
+          "duration": 3,
+          "shotType": "特写",
+          "camera": "固定",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远的手伸向手机，屏幕显示来电“李明”。手指在屏幕上悬停一秒，然后接听。",
+          "expression": "眼神从屏幕移到手机，嘴角微动",
+          "facialAU": "AU1(眉毛微抬)+AU14(嘴角微张)",
+          "dialogue": "",
+          "sound": "电话铃声（持续）",
+          "isBridge": false
+        },
+        {
+          "shotId": 3,
+          "startTime": 7,
+          "endTime": 11,
+          "duration": 4,
+          "shotType": "近景",
+          "camera": "缓慢推进",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远将手机放在耳边，身体靠在椅背上，眼睛望着窗外。",
+          "expression": "眉头微皱，目光若有所思",
+          "facialAU": "AU4(皱眉)+AU17(下巴前伸)",
+          "dialogue": "（李明电话声）林远，我是李明。听说你在做新方案？我想跟你谈谈合作的事。",
+          "sound": "电话通话声（低沉）",
+          "isBridge": false
+        },
+        {
+          "shotId": 4,
+          "startTime": 11,
+          "endTime": 14.5,
+          "duration": 3.5,
+          "shotType": "特写",
+          "camera": "固定",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远嘴唇微动，准备说话，又停下。手指在桌面上轻敲两下。",
+          "expression": "惊讶转为克制的平静，眼神闪烁",
+          "facialAU": "AU1(眉毛微抬)+AU5(眼睛睁大)+AU14(嘴角微张)",
+          "dialogue": "李总？您不是已经……",
+          "sound": "环境音（空调低鸣）",
+          "isBridge": true
+        }
+      ],
+      "referenceImages": [],
+      "bridgePrompt": "[接点镜头 - 不可编辑]\n时间: 11s - 14.5s\n景别: 特写 | 运镜: 固定\n动作: 林远嘴唇微动，准备说话，又停下。手指在桌面上轻敲两下。\n表情: AU1(眉毛微抬)+AU5(眼睛睁大)+AU14(嘴角微张)\n台词: 李总？您不是已经……\n音效: 环境音（空调低鸣）",
+      "locked": false,
+      "confirmed": false
+    },
+    {
+      "groupId": "Group_02",
+      "prompt": "# Group_02 - 全流程测试\n总时长: 17秒\n\n--- 镜头 4 [接点镜头] ---\n时间: 0s - 3.5s\n景别: 特写 | 运镜: 固定\n角色: 林远\n动作: 林远嘴唇微动，准备说话，又停下。手指在桌面上轻敲两下。\n表情: AU1(眉毛微抬)+AU5(眼睛睁大)+AU14(嘴角微张) (惊讶转为克制的平静，眼神闪烁)\n台词: 李总？您不是已经……\n音效: 环境音（空调低鸣）\n\n--- 镜头 5 ---\n时间: 3.5s - 7.5s\n景别: 全景 | 运镜: 固定\n角色: 林远\n动作: 林远坐在椅子上，手肘撑在桌面，目光低垂。电话中传来声音。\n表情: AU4(皱眉)+AU15(嘴角下压) (眉头紧锁，嘴唇紧抿)\n台词: （李明电话声）过去的事不提了。明天下午三点，老地方见。\n音效: 电话挂断声（短促）\n\n--- 镜头 6 ---\n时间: 7.5s - 10.5s\n景别: 特写 | 运镜: 固定\n角色: 林远\n动作: 林远的手慢慢放下手机，手机屏幕亮着，显示通话结束。手指在屏幕上滑动，又停下。\n表情: AU4(皱眉)+AU7(眼睛微眯) (眉头紧锁，目光锐利)\n音效: 环境音（钟表滴答）\n\n--- 镜头 7 ---\n时间: 10.5s - 13.5s\n景别: 中景 | 运镜: 固定\n角色: 林远\n动作: 林远推门走进咖啡馆，环顾四周，走向靠窗的座位，坐下。\n表情: AU4(轻微皱眉)+AU7(眼睛微眯) (表情平静，但眼神扫视)\n音效: 咖啡馆嘈杂声、门铃叮当声\n\n--- 镜头 8 [接点镜头] ---\n时间: 13.5s - 17s\n景别: 远景 | 运镜: 固定\n角色: 李明\n动作: 李明从门口进来，径直走向林远的桌子，步伐沉稳。\n表情: AU2(眉毛上抬)+AU17(下巴前伸) (表情严肃，目光直视前方)\n音效: 咖啡馆嘈杂声、脚步声\n",
+      "timelineShots": [
+        {
+          "shotId": 4,
+          "startTime": 0,
+          "endTime": 3.5,
+          "duration": 3.5,
+          "shotType": "特写",
+          "camera": "固定",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远嘴唇微动，准备说话，又停下。手指在桌面上轻敲两下。",
+          "expression": "惊讶转为克制的平静，眼神闪烁",
+          "facialAU": "AU1(眉毛微抬)+AU5(眼睛睁大)+AU14(嘴角微张)",
+          "dialogue": "李总？您不是已经……",
+          "sound": "环境音（空调低鸣）",
+          "isBridge": true
+        },
+        {
+          "shotId": 5,
+          "startTime": 3.5,
+          "endTime": 7.5,
+          "duration": 4,
+          "shotType": "全景",
+          "camera": "固定",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远坐在椅子上，手肘撑在桌面，目光低垂。电话中传来声音。",
+          "expression": "眉头紧锁，嘴唇紧抿",
+          "facialAU": "AU4(皱眉)+AU15(嘴角下压)",
+          "dialogue": "（李明电话声）过去的事不提了。明天下午三点，老地方见。",
+          "sound": "电话挂断声（短促）",
+          "isBridge": false
+        },
+        {
+          "shotId": 6,
+          "startTime": 7.5,
+          "endTime": 10.5,
+          "duration": 3,
+          "shotType": "特写",
+          "camera": "固定",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远的手慢慢放下手机，手机屏幕亮着，显示通话结束。手指在屏幕上滑动，又停下。",
+          "expression": "眉头紧锁，目光锐利",
+          "facialAU": "AU4(皱眉)+AU7(眼睛微眯)",
+          "dialogue": "",
+          "sound": "环境音（钟表滴答）",
+          "isBridge": false
+        },
+        {
+          "shotId": 7,
+          "startTime": 10.5,
+          "endTime": 13.5,
+          "duration": 3,
+          "shotType": "中景",
+          "camera": "固定",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远推门走进咖啡馆，环顾四周，走向靠窗的座位，坐下。",
+          "expression": "表情平静，但眼神扫视",
+          "facialAU": "AU4(轻微皱眉)+AU7(眼睛微眯)",
+          "dialogue": "",
+          "sound": "咖啡馆嘈杂声、门铃叮当声",
+          "isBridge": false
+        },
+        {
+          "shotId": 8,
+          "startTime": 13.5,
+          "endTime": 17,
+          "duration": 3.5,
+          "shotType": "远景",
+          "camera": "固定",
+          "characters": [
+            "李明"
+          ],
+          "actions": "李明从门口进来，径直走向林远的桌子，步伐沉稳。",
+          "expression": "表情严肃，目光直视前方",
+          "facialAU": "AU2(眉毛上抬)+AU17(下巴前伸)",
+          "dialogue": "",
+          "sound": "咖啡馆嘈杂声、脚步声",
+          "isBridge": true
+        }
+      ],
+      "referenceImages": [],
+      "bridgePrompt": "[接点镜头 - 不可编辑]\n时间: 13.5s - 17s\n景别: 远景 | 运镜: 固定\n动作: 李明从门口进来，径直走向林远的桌子，步伐沉稳。\n表情: AU2(眉毛上抬)+AU17(下巴前伸)\n音效: 咖啡馆嘈杂声、脚步声",
+      "locked": false,
+      "confirmed": false
+    },
+    {
+      "groupId": "Group_03",
+      "prompt": "# Group_03 - 全流程测试\n总时长: 15秒\n\n--- 镜头 8 [接点镜头] ---\n时间: 0s - 3.5s\n景别: 远景 | 运镜: 固定\n角色: 李明\n动作: 李明从门口进来，径直走向林远的桌子，步伐沉稳。\n表情: AU2(眉毛上抬)+AU17(下巴前伸) (表情严肃，目光直视前方)\n音效: 咖啡馆嘈杂声、脚步声\n\n--- 镜头 9 ---\n时间: 3.5s - 6s\n景别: 近景 | 运镜: 固定\n角色: 李明\n动作: 李明在对面坐下，身体微前倾，双手放在桌上。\n表情: AU12(嘴角微抬)+AU4(轻微皱眉) (嘴角微动，眼神平静)\n台词: 好久不见。\n音效: 椅子拉动声\n\n--- 镜头 10 ---\n时间: 6s - 8.5s\n景别: 特写 | 运镜: 固定\n角色: 林远\n动作: 林远抬起眼睛，与李明对视一下，又移开目光，手指在杯沿上滑动。\n表情: AU4(皱眉)+AU15(嘴角下压) (眼神回避，嘴角微抿)\n台词: 确实。\n音效: 环境音（咖啡机蒸汽声）\n\n--- 镜头 11 ---\n时间: 8.5s - 12s\n景别: 中景 | 运镜: 固定\n角色: 林远, 李明\n动作: 两人沉默，林远低头看桌，李明望着窗外。服务生端咖啡过来，李明接过咖啡杯。\n表情: 林远:AU4(皱眉)+AU15(嘴角下压); 李明:AU4(轻微皱眉)+AU7(眼睛微眯) (林远面无表情，李明目光深远)\n音效: 杯子放在桌上的轻响\n\n--- 镜头 12 ---\n时间: 12s - 15s\n景别: 近景 | 运镜: 缓慢推进\n角色: 李明\n动作: 李明端起咖啡杯，轻抿一口，放下杯子，目光直视林远。\n表情: AU1(眉毛微抬)+AU17(下巴前伸) (表情认真，眼神坚定)\n台词: 我知道你恨我。但这次我是认真的。\n音效: 环境音（咖啡杯碰撞声）\n",
+      "timelineShots": [
+        {
+          "shotId": 8,
+          "startTime": 0,
+          "endTime": 3.5,
+          "duration": 3.5,
+          "shotType": "远景",
+          "camera": "固定",
+          "characters": [
+            "李明"
+          ],
+          "actions": "李明从门口进来，径直走向林远的桌子，步伐沉稳。",
+          "expression": "表情严肃，目光直视前方",
+          "facialAU": "AU2(眉毛上抬)+AU17(下巴前伸)",
+          "dialogue": "",
+          "sound": "咖啡馆嘈杂声、脚步声",
+          "isBridge": true
+        },
+        {
+          "shotId": 9,
+          "startTime": 3.5,
+          "endTime": 6,
+          "duration": 2.5,
+          "shotType": "近景",
+          "camera": "固定",
+          "characters": [
+            "李明"
+          ],
+          "actions": "李明在对面坐下，身体微前倾，双手放在桌上。",
+          "expression": "嘴角微动，眼神平静",
+          "facialAU": "AU12(嘴角微抬)+AU4(轻微皱眉)",
+          "dialogue": "好久不见。",
+          "sound": "椅子拉动声",
+          "isBridge": false
+        },
+        {
+          "shotId": 10,
+          "startTime": 6,
+          "endTime": 8.5,
+          "duration": 2.5,
+          "shotType": "特写",
+          "camera": "固定",
+          "characters": [
+            "林远"
+          ],
+          "actions": "林远抬起眼睛，与李明对视一下，又移开目光，手指在杯沿上滑动。",
+          "expression": "眼神回避，嘴角微抿",
+          "facialAU": "AU4(皱眉)+AU15(嘴角下压)",
+          "dialogue": "确实。",
+          "sound": "环境音（咖啡机蒸汽声）",
+          "isBridge": false
+        },
+        {
+          "shotId": 11,
+          "startTime": 8.5,
+          "endTime": 12,
+          "duration": 3.5,
+          "shotType": "中景",
+          "camera": "固定",
+          "characters": [
+            "林远",
+            "李明"
+          ],
+          "actions": "两人沉默，林远低头看桌，李明望着窗外。服务生端咖啡过来，李明接过咖啡杯。",
+          "expression": "林远面无表情，李明目光深远",
+          "facialAU": "林远:AU4(皱眉)+AU15(嘴角下压); 李明:AU4(轻微皱眉)+AU7(眼睛微眯)",
+          "dialogue": "",
+          "sound": "杯子放在桌上的轻响",
+          "isBridge": false
+        },
+        {
+          "shotId": 12,
+          "startTime": 12,
+          "endTime": 15,
+          "duration": 3,
+          "shotType": "近景",
+          "camera": "缓慢推进",
+          "characters": [
+            "李明"
+          ],
+          "actions": "李明端起咖啡杯，轻抿一口，放下杯子，目光直视林远。",
+          "expression": "表情认真，眼神坚定",
+          "facialAU": "AU1(眉毛微抬)+AU17(下巴前伸)",
+          "dialogue": "我知道你恨我。但这次我是认真的。",
+          "sound": "环境音（咖啡杯碰撞声）",
+          "isBridge": false
+        }
+      ],
+      "referenceImages": [],
+      "bridgePrompt": "[接点镜头 - 不可编辑]\n时间: 13.5s - 17s\n景别: 远景 | 运镜: 固定\n动作: 李明从门口进来，径直走向林远的桌子，步伐沉稳。\n表情: AU2(眉毛上抬)+AU17(下巴前伸)\n音效: 咖啡馆嘈杂声、脚步声",
+      "locked": false,
+      "confirmed": false
+    }
+  ],
+  "generation": null,
+  "manifest": null
+}
