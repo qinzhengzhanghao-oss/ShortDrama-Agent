@@ -34,16 +34,13 @@ const AssetManager = {
                        @click="setMainImage(entity, variant, i)" :title="i === variant.mainImageIndex ? '主参考图' : '点击设为主参考图'">
                   <button class="btn btn-sm btn-danger" style="position:absolute;top:-4px;right:-4px;padding:0 4px;font-size:10px;line-height:16px;" @click="deleteImage(entity, variant, i)">×</button>
                 </div>
-                <div class="upload-zone" @click="triggerUpload(entity, variant)">
-                  <input type="file" multiple accept="image/*" style="display:none" :ref="'upload_' + entity.id + '_' + variant.id"
+                <div class="upload-zone" @click="document.getElementById('char_upload_' + entity.id + '_' + variant.id).click()">
+                  <input type="file" multiple accept="image/*" style="display:none"
+                         :id="'char_upload_' + entity.id + '_' + variant.id"
                          @change="uploadImages(entity, variant, $event)">
                   + 上传图片
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-sm" style="margin-top:8px;" @click="addEntity('characters')">+ 添加角色</button>
       </div>
 
       <!-- 场景 -->
@@ -73,19 +70,13 @@ const AssetManager = {
                        @click="setMainImage(entity, variant, i)" :title="i === variant.mainImageIndex ? '主参考图' : '点击设为主参考图'">
                   <button class="btn btn-sm btn-danger" style="position:absolute;top:-4px;right:-4px;padding:0 4px;font-size:10px;line-height:16px;" @click="deleteImage(entity, variant, i)">×</button>
                 </div>
-                <div class="upload-zone" @click="triggerUpload(entity, variant)">
-                  <input type="file" multiple accept="image/*" style="display:none" :ref="'upload_' + entity.id + '_' + variant.id"
+                <div class="upload-zone" @click="document.getElementById('scene_upload_' + entity.id + '_' + variant.id).click()">
+                  <input type="file" multiple accept="image/*" style="display:none"
+                         :id="'scene_upload_' + entity.id + '_' + variant.id"
                          @change="uploadImages(entity, variant, $event)">
                   + 上传图片
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-sm" style="margin-top:8px;" @click="addEntity('scenes')">+ 添加场景</button>
-      </div>
-    </div>
-  `,
+              </div>,
   data() {
     return {
       characters: [],
@@ -161,12 +152,7 @@ const AssetManager = {
       }
     },
 
-    triggerUpload(entity, variant) {
-      const key = 'upload_' + entity.id + '_' + variant.id;
-      // 直接查找文件输入
-      const el = this.$el.querySelector(`input[type="file"]`);
-      if (el) el.click();
-    },
+    triggerUpload: null, // 不再使用 inline click 替代了
 
     async uploadImages(entity, variant, event) {
       const files = event.target.files;
