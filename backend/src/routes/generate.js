@@ -115,14 +115,14 @@ router.post('/:projectId/retry/:groupId', async (req, res) => {
           const status = await seedanceService.getTaskStatus(resp.taskId);
           group.status = status.status;
           group.progress = status.progress;
-          if (status.status === 'completed') {
+          if (status.status === 'SUCCESS' || status.status === 'completed') {
             group.result = status.result;
             task.completedGroups++;
-          } else if (status.status === 'failed') {
+          } else if (status.status === 'FAILED' || status.status === 'failed') {
             group.error = status.error || '生成失败';
             task.failedGroups++;
           }
-          if (status.status === 'completed' || status.status === 'failed') break;
+          if (status.status === 'SUCCESS' || status.status === 'completed' || status.status === 'FAILED' || status.status === 'failed') break;
         }
       });
     }
@@ -259,12 +259,15 @@ async function startGeneration(project, taskRecord, concurrency) {
           groupTask.status = status.status;
           groupTask.progress = status.progress;
 
-          if (status.status === 'completed') {
+          // API 状态映射: SUCCESS→completed, FAILED→failed
+          const s = status.status;
+          if (s === 'SUCCESS' || s === 'completed') {
             groupTask.result = status.result;
             groupTask.progress = 100;
+            groupTask.status = 'completed';
             taskRecord.completedGroups++;
             return;
-          } else if (status.status === 'failed') {
+          } else if (s === 'FAILED' || s === 'FAILURE' || s === 'failed') {
             groupTask.error = status.error || '生成失败';
             groupTask.status = 'failed';
             taskRecord.failedGroups++;
