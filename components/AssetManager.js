@@ -1,6 +1,6 @@
 /**
  * AssetManager 组件 — 资产管理
- * 重构: 实体层级直接展示图片和上传入口，变体为二级组织
+ * 角色/场景各一个 section，每个实体的变体直接展示图片上传
  */
 
 const AssetManager = {
@@ -8,71 +8,54 @@ const AssetManager = {
   props: { projectId: String },
   template: `
     <div>
-      <!-- 角色 -->
+      <!-- ========== 角色 ========== -->
       <div class="asset-section">
         <h3>👤 角色 (Characters)</h3>
         <div v-for="(entity, eIdx) in characters" :key="entity.id" class="entity-card">
-          <!-- 实体头部：名称 + 操作 -->
           <div class="entity-header" @click="entity._expanded = !entity._expanded">
             <span>{{ entity.name }}</span>
-            <div class="entity-header-actions">
+            <div>
               <button class="btn btn-sm" @click.stop="addVariant(entity)">+变体</button>
               <button class="btn btn-sm btn-danger" @click.stop="deleteEntity('characters', entity, eIdx)">删除</button>
             </div>
           </div>
 
           <div class="variant-list" v-if="entity._expanded">
-            <!-- 遍历变体 -->
             <div v-for="(variant, vIdx) in entity.variants" :key="variant.id" class="variant-item">
-              <div class="variant-top-row">
-                <div class="form-group">
-                  <label>变体名称</label>
-                  <input :value="variant.name"
-                         @input="updateVariant(entity, variant, 'name', $event.target.value)"
-                         placeholder="如: 日常装、西装">
-                </div>
+              <div class="form-group">
+                <label>变体名称</label>
+                <input :value="variant.name" @input="updateVariant(entity, variant, 'name', $event.target.value)" placeholder="如: 日常装、西装">
               </div>
               <div class="form-group">
                 <label>外观描述</label>
-                <textarea :value="variant.description"
-                          @input="updateVariant(entity, variant, 'description', $event.target.value)"
-                          placeholder="描述该变体的外观特征..."></textarea>
+                <textarea :value="variant.description" @input="updateVariant(entity, variant, 'description', $event.target.value)" placeholder="描述该变体的外观特征..."></textarea>
               </div>
-
-              <!-- 图片区 -->
               <div class="variant-images">
                 <div v-for="(img, i) in variant.images" :key="i" style="position:relative;display:inline-block;">
-                  <img :src="img.url"
-                       :class="{ 'main-image': i === variant.mainImageIndex }"
+                  <img :src="img.url" :class="{ 'main-image': i === variant.mainImageIndex }"
                        @click="setMainImage(entity, variant, i)"
                        :title="i === variant.mainImageIndex ? '主参考图' : '点击设为主参考图'"
                        style="width:100px;height:100px;object-fit:cover;border-radius:6px;margin:4px;cursor:pointer;">
-                  <button class="btn btn-sm btn-danger"
-                          style="position:absolute;top:0;right:0;padding:0 6px;font-size:10px;line-height:18px;border-radius:0 6px 0 6px;"
-                          @click="deleteImage(entity, variant, i)">×</button>
+                  <button class="btn btn-sm btn-danger" style="position:absolute;top:0;right:0;padding:0 6px;font-size:10px;line-height:18px;border-radius:0 6px 0 6px;" @click="deleteImage(entity, variant, i)">×</button>
                 </div>
-                <!-- 上传按钮 -->
-                <div class="upload-zone" @click="document.getElementById('up_' + entity.type + '_' + entity.id + '_' + variant.id).click()">
-                  <input type="file" multiple accept="image/*" style="display:none"
-                         :id="'up_' + entity.type + '_' + entity.id + '_' + variant.id"
-                         @change="uploadImages(entity, variant, $event)">
+                <div class="upload-zone" @click="openUpload(entity, variant)">
+                  <input type="file" multiple accept="image/*" style="display:none" :id="'up_' + entity.type + '_' + entity.id + '_' + variant.id" @change="uploadImages(entity, variant, $event)">
                   + 上传图片
                 </div>
               </div>
             </div>
-            <!-- /end 变体遍历 -->
           </div>
         </div>
         <button class="btn btn-sm" style="margin-top:8px;" @click="addEntity('characters')">+ 添加角色</button>
       </div>
 
-      <!-- 场景 -->
+      <!-- ========== 场景 ========== -->
       <div class="asset-section">
         <h3>🏠 场景 (Scenes)</h3>
         <div v-for="(entity, eIdx) in scenes" :key="entity.id" class="entity-card">
           <div class="entity-header" @click="entity._expanded = !entity._expanded">
             <span>{{ entity.name }}</span>
-            <div class="entity-header-actions">
+            <div>
               <button class="btn btn-sm" @click.stop="addVariant(entity)">+变体</button>
               <button class="btn btn-sm btn-danger" @click.stop="deleteEntity('scenes', entity, eIdx)">删除</button>
             </div>
@@ -80,36 +63,24 @@ const AssetManager = {
 
           <div class="variant-list" v-if="entity._expanded">
             <div v-for="(variant, vIdx) in entity.variants" :key="variant.id" class="variant-item">
-              <div class="variant-top-row">
-                <div class="form-group">
-                  <label>变体名称</label>
-                  <input :value="variant.name"
-                         @input="updateVariant(entity, variant, 'name', $event.target.value)"
-                         placeholder="如: 白天、夜晚">
-                </div>
+              <div class="form-group">
+                <label>变体名称</label>
+                <input :value="variant.name" @input="updateVariant(entity, variant, 'name', $event.target.value)" placeholder="如: 白天、夜晚">
               </div>
               <div class="form-group">
                 <label>场景描述</label>
-                <textarea :value="variant.description"
-                          @input="updateVariant(entity, variant, 'description', $event.target.value)"
-                          placeholder="描述该场景的外观特征..."></textarea>
+                <textarea :value="variant.description" @input="updateVariant(entity, variant, 'description', $event.target.value)" placeholder="描述该场景的外观特征..."></textarea>
               </div>
-
               <div class="variant-images">
                 <div v-for="(img, i) in variant.images" :key="i" style="position:relative;display:inline-block;">
-                  <img :src="img.url"
-                       :class="{ 'main-image': i === variant.mainImageIndex }"
+                  <img :src="img.url" :class="{ 'main-image': i === variant.mainImageIndex }"
                        @click="setMainImage(entity, variant, i)"
                        :title="i === variant.mainImageIndex ? '主参考图' : '点击设为主参考图'"
                        style="width:100px;height:100px;object-fit:cover;border-radius:6px;margin:4px;cursor:pointer;">
-                  <button class="btn btn-sm btn-danger"
-                          style="position:absolute;top:0;right:0;padding:0 6px;font-size:10px;line-height:18px;border-radius:0 6px 0 6px;"
-                          @click="deleteImage(entity, variant, i)">×</button>
+                  <button class="btn btn-sm btn-danger" style="position:absolute;top:0;right:0;padding:0 6px;font-size:10px;line-height:18px;border-radius:0 6px 0 6px;" @click="deleteImage(entity, variant, i)">×</button>
                 </div>
-                <div class="upload-zone" @click="document.getElementById('up_' + entity.type + '_' + entity.id + '_' + variant.id).click()">
-                  <input type="file" multiple accept="image/*" style="display:none"
-                         :id="'up_' + entity.type + '_' + entity.id + '_' + variant.id"
-                         @change="uploadImages(entity, variant, $event)">
+                <div class="upload-zone" @click="openUpload(entity, variant)">
+                  <input type="file" multiple accept="image/*" style="display:none" :id="'up_' + entity.type + '_' + entity.id + '_' + variant.id" @change="uploadImages(entity, variant, $event)">
                   + 上传图片
                 </div>
               </div>
@@ -149,15 +120,14 @@ const AssetManager = {
     },
 
     async addEntity(type) {
-      const name = prompt(`输入${type === 'characters' ? '角色' : type === 'scenes' ? '场景' : '道具'}名称:`);
+      const name = prompt(`输入${type === 'characters' ? '角色' : '场景'}名称:`);
       if (!name) return;
       try {
         const data = await api.createEntity(this.projectId, type, name);
         const entity = { ...data.entity, _expanded: true, variants: [] };
         if (type === 'characters') this.characters.push(entity);
         else if (type === 'scenes') this.scenes.push(entity);
-
-        // 创建时自动添加默认变体，用户可直接上传图片
+        // 自动添加默认变体，用户可直接上传图片
         await this.addVariant(entity);
       } catch (e) {
         console.error('添加实体失败:', e);
@@ -206,6 +176,11 @@ const AssetManager = {
         console.error('上传图片失败:', e);
       }
       event.target.value = '';
+    },
+
+    openUpload(entity, variant) {
+      const el = document.getElementById('up_' + entity.type + '_' + entity.id + '_' + variant.id);
+      if (el) el.click();
     },
 
     async setMainImage(entity, variant, index) {
