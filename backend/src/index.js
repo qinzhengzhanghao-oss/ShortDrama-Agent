@@ -55,6 +55,16 @@ app.use('/api/generate', require('./routes/generate'));
 // 静态文件服务（本地图片/视频预览）
 app.use('/data', express.static(DATA_DIR));
 
+// 提供前端文件
+const FRONTEND_DIR = path.join(__dirname, '..', '..', 'frontend');
+app.use(express.static(FRONTEND_DIR));
+
+// 所有非 API 路由返回前端入口
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api/') || req.path.startsWith('/data/')) return;
+  res.sendFile(path.join(FRONTEND_DIR, 'index.html'));
+});
+
 // ============ 启动 ============
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n🎬 ShortDrama-Agent 后端已启动`);

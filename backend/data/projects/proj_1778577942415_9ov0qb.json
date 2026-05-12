@@ -1,0 +1,37 @@
+{
+  "id": "proj_1778577942415_9ov0qb",
+  "name": "测试项目",
+  "style": "真人",
+  "status": "created",
+  "createdAt": "2026-05-12T09:25:42.415Z",
+  "updatedAt": "2026-05-12T09:26:01.600Z",
+  "assets": {
+    "characters": [
+      {
+        "id": "ent_1778577960744_1ywjhm",
+        "name": "林远",
+        "type": "characters",
+        "variants": [
+          {
+            "id": "var_1778577961600_o4o953",
+            "name": "默认",
+            "description": "",
+            "images": [],
+            "mainImageIndex": 0,
+            "createdAt": "2026-05-12T09:26:01.600Z"
+          }
+        ],
+        "createdAt": "2026-05-12T09:26:00.744Z"
+      }
+    ],
+    "scenes": [],
+    "props": []
+  },
+  "script": null,
+  "scriptParsed": null,
+  "storyboard": null,
+  "groups": null,
+  "prompts": null,
+  "generation": null,
+  "manifest": null
+}
