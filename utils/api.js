@@ -3,8 +3,16 @@
  * 配置 API_BASE_URL 指向本地后端
  */
 
-// 本地开发时用 localhost，部署后替换为 ngrok/cloudflare 域名
-const API_BASE_URL = 'http://localhost:3000/api';
+// API 后端地址
+// 本地开发：http://localhost:3000
+// 内网穿透：https://xxx.ngrok-free.app
+// 部署后：通过 query 参数 ?api=http://xxx 覆盖
+const API_BASE_URL = (() => {
+  const params = new URLSearchParams(window.location.search);
+  const apiParam = params.get('api');
+  if (apiParam) return apiParam + '/api';
+  return 'http://localhost:3000/api';
+})();
 
 const api = {
   // ============ 项目 ============
