@@ -1,8 +1,8 @@
-node_modules/
-data/uploads/
-data/generated/
-data/scripts_temp/
-ngrok.exe
-*.log
 .env
+node_modules/
+data/uploads/*
+data/generated/*
+!data/uploads/.gitkeep
+!data/generated/.gitkeep
 __pycache__/
+*.pyc
