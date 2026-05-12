@@ -1,0 +1,8 @@
+node_modules/
+data/uploads/
+data/generated/
+data/scripts_temp/
+ngrok.exe
+*.log
+.env
+__pycache__/

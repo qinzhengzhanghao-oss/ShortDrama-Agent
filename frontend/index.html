@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShortDrama-Agent 短剧自动化生产系统</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.prod.js"></script>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="app-layout" v-if="!loading">
+      <!-- 左侧导航 -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h1>🎬 短剧工厂</h1>
+          <div class="project-selector">
+            <select v-model="currentProjectId" @change="onProjectChange">
+              <option value="">-- 选择项目 --</option>
+              <option v-for="p in projects" :key="p.id" :value="p.id">{{ p.name }}</option>
+            </select>
+            <button class="btn btn-sm" @click="showNewProjectModal = true">+ 新建</button>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <div v-for="step in steps" :key="step.id"
+               class="nav-item"
+               :class="{ active: currentStep === step.id, disabled: !step.enabled(currentProjectId, projectStatus) }"
+               @click="navigateTo(step.id)">
+            <span class="nav-icon">{{ step.icon }}</span>
+            <span class="nav-label">{{ step.label }}</span>
+            <span class="nav-badge" v-if="step.badge && step.badge(currentProjectId, projectStatus)">{{ step.badge(currentProjectId, projectStatus) }}</span>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- 右侧主区 -->
+      <main class="main-area">
+        <!-- 资产管理 -->
+        <div v-if="currentStep === 'assets'" class="step-panel">
+          <div class="panel-header">
+            <h2>📦 资产管理</h2>
+            <div class="panel-actions">
+              <span class="status-warning" v-if="assetWarning">⚠️ {{ assetWarning }}</span>
+              <button class="btn btn-primary" :disabled="!allAssetsValid" @click="nextStep">确认资产 →</button>
+            </div>
+          </div>
+          <asset-manager :project-id="currentProjectId" ref="assetManager"></asset-manager>
+        </div>
+
+        <!-- 剧本上传 -->
+        <div v-if="currentStep === 'script'" class="step-panel">
+          <div class="panel-header">
+            <h2>📄 剧本上传与解析</h2>
+            <div class="panel-actions">
+              <button class="btn btn-primary" :disabled="!scriptReady" @click="nextStep">确认剧本 →</button>
+            </div>
+          </div>
+          <script-manager :project-id="currentProjectId" ref="scriptManager"></script-manager>
+        </div>
+
+        <!-- 分镜审核 -->
+        <div v-if="currentStep === 'storyboard'" class="step-panel">
+          <div class="panel-header">
+            <h2>🎞️ 分镜审核与编组</h2>
+            <div class="panel-actions">
+              <button class="btn btn-primary" :disabled="!storyboardReady" @click="nextStep">确认分镜 →</button>
+            </div>
+          </div>
+          <storyboard-review :project-id="currentProjectId" ref="storyboardReview"></storyboard-review>
+        </div>
+
+        <!-- 提示词审核 -->
+        <div v-if="currentStep === 'prompts'" class="step-panel">
+          <div class="panel-header">
+            <h2>📝 提示词审核</h2>
+            <div class="panel-actions">
+              <button class="btn btn-primary" :disabled="!allPromptsConfirmed" @click="submitGeneration">提交生成</button>
+            </div>
+          </div>
+          <prompt-review :project-id="currentProjectId" ref="promptReview"></prompt-review>
+        </div>
+
+        <!-- 生成进度 -->
+        <div v-if="currentStep === 'generate'" class="step-panel">
+          <div class="panel-header">
+            <h2>⚡ 视频生成</h2>
+            <div class="panel-actions">
+              <button class="btn" @click="refreshTaskStatus">刷新状态</button>
+            </div>
+          </div>
+          <generation-dashboard :project-id="currentProjectId" ref="generationDashboard"></generation-dashboard>
+        </div>
+      </main>
+    </div>
+
+    <!-- Loading -->
+    <div v-if="loading" class="loading-screen">
+      <div class="loading-spinner"></div>
+      <p>加载中...</p>
+    </div>
+
+    <!-- 新建项目 Modal -->
+    <div class="modal-overlay" v-if="showNewProjectModal" @click.self="showNewProjectModal = false">
+      <div class="modal">
+        <h3>新建项目</h3>
+        <div class="form-group">
+          <label>项目名称</label>
+          <input v-model="newProjectName" placeholder="输入项目名称" @keyup.enter="createProject">
+        </div>
+        <div class="form-group">
+          <label>影片风格</label>
+          <select v-model="newProjectStyle">
+            <option value="真人">真人</option>
+            <option value="2D动漫">2D动漫</option>
+            <option value="3D动漫">3D动漫</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button class="btn" @click="showNewProjectModal = false">取消</button>
+          <button class="btn btn-primary" @click="createProject">创建</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="utils/api.js"></script>
+  <script src="components/AssetManager.js"></script>
+  <script src="components/ScriptManager.js"></script>
+  <script src="components/StoryboardReview.js"></script>
+  <script src="components/PromptReview.js"></script>
+  <script src="components/GenerationDashboard.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
