@@ -66,6 +66,32 @@ const api = {
     return resp.json();
   },
 
+  async updateEntity(projectId, entityType, entityId, data) {
+    const resp = await fetch(`${API_BASE_URL}/assets/${projectId}/${entityType}/${entityId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    return resp.json();
+  },
+
+  async uploadEntityImages(projectId, entityType, entityId, files) {
+    const formData = new FormData();
+    for (const f of files) formData.append('images', f);
+    const resp = await fetch(`${API_BASE_URL}/assets/${projectId}/${entityType}/${entityId}/upload`, {
+      method: 'POST',
+      body: formData
+    });
+    return resp.json();
+  },
+
+  async deleteEntityImage(projectId, entityType, entityId, imageIndex) {
+    const resp = await fetch(`${API_BASE_URL}/assets/${projectId}/${entityType}/${entityId}/images/${imageIndex}`, {
+      method: 'DELETE'
+    });
+    return resp.json();
+  },
+
   async createVariant(projectId, entityType, entityId, name, description = '') {
     const resp = await fetch(`${API_BASE_URL}/assets/${projectId}/${entityType}/${entityId}/variants`, {
       method: 'POST',

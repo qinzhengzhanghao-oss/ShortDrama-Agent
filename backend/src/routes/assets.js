@@ -102,6 +102,82 @@ router.delete('/:projectId/:entityType/:entityId', (req, res) => {
   }
 });
 
+/** ============ 实体更新 ============ */
+
+// PATCH /api/assets/:projectId/:entityType/:entityId - 更新实体属性
+router.patch('/:projectId/:entityType/:entityId', (req, res) => {
+  try {
+    const { projectId, entityType, entityId } = req.params;
+    const project = loadProjectAssets(projectId);
+    if (!project) return res.status(404).json({ error: '项目不存在' });
+
+    const entity = project.assets[entityType].find(e => e.id === entityId);
+    if (!entity) return res.status(404).json({ error: '实体不存在' });
+
+    if (req.body.description !== undefined) entity.description = req.body.description;
+    if (req.body.mainImageIndex !== undefined) entity.mainImageIndex = req.body.mainImageIndex;
+
+    saveProjectAssets(project, project.assets);
+    res.json({ entity });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+/** ============ 实体图片上传 ============ */
+
+// POST /api/assets/:projectId/:entityType/:entityId/upload - 上传实体图片
+router.post('/:projectId/:entityType/:entityId/upload', upload.array('images', 10), (req, res) => {
+  try {
+    const { projectId, entityType, entityId } = req.params;
+    const project = loadProjectAssets(projectId);
+    if (!project) return res.status(404).json({ error: '项目不存在' });
+
+    const entity = project.assets[entityType].find(e => e.id === entityId);
+    if (!entity) return res.status(404).json({ error: '实体不存在' });
+
+    const uploaded = req.files.map((f, i) => ({
+      url: `/data/uploads/${projectId}/${entityType}/${entityId}/${f.filename}`,
+      filename: f.filename,
+      originalName: f.originalname,
+      size: f.size,
+      uploadedAt: new Date().toISOString()
+    }));
+
+    if (!entity.images) entity.images = [];
+    entity.images.push(...uploaded);
+    saveProjectAssets(project, project.assets);
+    res.json({ images: uploaded });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// DELETE /api/assets/:projectId/:entityType/:entityId/images/:imageIndex - 删除实体图片
+router.delete('/:projectId/:entityType/:entityId/images/:imageIndex', (req, res) => {
+  try {
+    const { projectId, entityType, entityId, imageIndex } = req.params;
+    const project = loadProjectAssets(projectId);
+    if (!project) return res.status(404).json({ error: '项目不存在' });
+
+    const entity = project.assets[entityType].find(e => e.id === entityId);
+    if (!entity) return res.status(404).json({ error: '实体不存在' });
+
+    const idx = parseInt(imageIndex);
+    if (idx < 0 || !entity.images || idx >= entity.images.length) return res.status(400).json({ error: '图片索引无效' });
+
+    const img = entity.images[idx];
+    const filePath = path.join(UPLOAD_DIR, projectId, entityType, entityId, img.filename);
+    if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+
+    entity.images.splice(idx, 1);
+    saveProjectAssets(project, project.assets);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 /** ============ 变体管理 ============ */
 
 // POST /api/assets/:projectId/:entityType/:entityId/variants - 创建变体

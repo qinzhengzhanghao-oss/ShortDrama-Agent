@@ -4,10 +4,84 @@
   "style": "真人",
   "status": "created",
   "createdAt": "2026-05-12T09:25:42.415Z",
-  "updatedAt": "2026-05-12T09:38:49.887Z",
+  "updatedAt": "2026-05-12T09:44:35.165Z",
   "assets": {
-    "characters": [],
-    "scenes": [],
+    "characters": [
+      {
+        "id": "ent_1778578943595_lyko2d",
+        "name": "林远",
+        "type": "characters",
+        "variants": [
+          {
+            "id": "var_1778578946277_n5jk60",
+            "name": "林远日常版",
+            "description": "",
+            "images": [
+              {
+                "url": "/data/uploads/proj_1778577942415_9ov0qb/characters/ent_1778578943595_lyko2d/1778579012295_5b34bbf5.png",
+                "filename": "1778579012295_5b34bbf5.png",
+                "originalName": "æè¿.png",
+                "size": 4586514,
+                "uploadedAt": "2026-05-12T09:43:32.323Z"
+              }
+            ],
+            "mainImageIndex": 0,
+            "createdAt": "2026-05-12T09:42:26.277Z"
+          },
+          {
+            "id": "var_1778578966229_rz7995",
+            "name": "林远日常版",
+            "description": "",
+            "images": [
+              {
+                "url": "/data/uploads/proj_1778577942415_9ov0qb/characters/ent_1778578943595_lyko2d/1778578984350_136decb2.png",
+                "filename": "1778578984350_136decb2.png",
+                "originalName": "æè¿.png",
+                "size": 4586514,
+                "uploadedAt": "2026-05-12T09:43:04.363Z"
+              }
+            ],
+            "mainImageIndex": 0,
+            "createdAt": "2026-05-12T09:42:46.229Z"
+          }
+        ],
+        "createdAt": "2026-05-12T09:42:23.595Z"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "ent_1778579041396_fk0mlp",
+        "name": "茶水间",
+        "type": "scenes",
+        "variants": [
+          {
+            "id": "var_1778579052518_9vs61k",
+            "name": "茶水间夜景",
+            "description": "",
+            "images": [
+              {
+                "url": "/data/uploads/proj_1778577942415_9ov0qb/scenes/ent_1778579041396_fk0mlp/1778579075136_e4121808.png",
+                "filename": "1778579075136_e4121808.png",
+                "originalName": "å¬å¸è¶æ°´é´.png",
+                "size": 3857399,
+                "uploadedAt": "2026-05-12T09:44:35.165Z"
+              }
+            ],
+            "mainImageIndex": 0,
+            "createdAt": "2026-05-12T09:44:12.518Z"
+          },
+          {
+            "id": "var_1778579065616_wp9166",
+            "name": "茶水间夜景",
+            "description": "",
+            "images": [],
+            "mainImageIndex": 0,
+            "createdAt": "2026-05-12T09:44:25.616Z"
+          }
+        ],
+        "createdAt": "2026-05-12T09:44:01.396Z"
+      }
+    ],
     "props": []
   },
   "script": null,

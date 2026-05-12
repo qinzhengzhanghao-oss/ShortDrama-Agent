@@ -11,7 +11,7 @@
 <body>
   <div id="app">
     <div class="app-layout" v-if="!loading">
-      <!-- 左侧导航 -->
+      <!-- 左侧导航 — 所有步骤都可点击 -->
       <aside class="sidebar">
         <div class="sidebar-header">
           <h1>🎬 短剧工厂</h1>
@@ -26,7 +26,7 @@
         <nav class="sidebar-nav">
           <div v-for="step in steps" :key="step.id"
                class="nav-item"
-               :class="{ active: currentStep === step.id, disabled: !step.enabled(currentProjectId, projectStatus) }"
+               :class="{ active: currentStep === step.id, disabled: !step.enabled(currentProjectId) }"
                @click="navigateTo(step.id)">
             <span class="nav-icon">{{ step.icon }}</span>
             <span class="nav-label">{{ step.label }}</span>
@@ -37,61 +37,58 @@
 
       <!-- 右侧主区 -->
       <main class="main-area">
-        <!-- 资产管理 -->
+
+        <!-- ============ 资产管理 ============ -->
         <div v-if="currentStep === 'assets'" class="step-panel">
           <div class="panel-header">
             <h2>📦 资产管理</h2>
-            <div class="panel-actions">
-              <span class="status-warning" v-if="assetWarning">⚠️ {{ assetWarning }}</span>
-              <button class="btn btn-primary" :disabled="!allAssetsValid" @click="nextStep">确认资产 →</button>
-            </div>
           </div>
-          <asset-manager :project-id="currentProjectId" ref="assetManager"></asset-manager>
+          <asset-manager :project-id="currentProjectId"
+            @confirm-characters="onConfirmCharacters"
+            @confirm-scenes="onConfirmScenes"></asset-manager>
         </div>
 
-        <!-- 剧本上传 -->
+        <!-- ============ 剧本解析 ============ -->
         <div v-if="currentStep === 'script'" class="step-panel">
           <div class="panel-header">
             <h2>📄 剧本上传与解析</h2>
-            <div class="panel-actions">
-              <button class="btn btn-primary" :disabled="!scriptReady" @click="nextStep">确认剧本 →</button>
-            </div>
           </div>
-          <script-manager :project-id="currentProjectId" ref="scriptManager"></script-manager>
+          <script-manager :project-id="currentProjectId"></script-manager>
+          <div style="margin-top:20px;text-align:right;">
+            <button class="btn btn-primary" @click="onConfirmScript">确认剧本 →</button>
+          </div>
         </div>
 
-        <!-- 分镜审核 -->
+        <!-- ============ 分镜审核 ============ -->
         <div v-if="currentStep === 'storyboard'" class="step-panel">
           <div class="panel-header">
             <h2>🎞️ 分镜审核与编组</h2>
-            <div class="panel-actions">
-              <button class="btn btn-primary" :disabled="!storyboardReady" @click="nextStep">确认分镜 →</button>
-            </div>
           </div>
-          <storyboard-review :project-id="currentProjectId" ref="storyboardReview"></storyboard-review>
+          <storyboard-review :project-id="currentProjectId"></storyboard-review>
+          <div style="margin-top:20px;text-align:right;">
+            <button class="btn btn-primary" @click="onConfirmStoryboard">确认分镜 →</button>
+          </div>
         </div>
 
-        <!-- 提示词审核 -->
+        <!-- ============ 提示词审核 ============ -->
         <div v-if="currentStep === 'prompts'" class="step-panel">
           <div class="panel-header">
             <h2>📝 提示词审核</h2>
-            <div class="panel-actions">
-              <button class="btn btn-primary" :disabled="!allPromptsConfirmed" @click="submitGeneration">提交生成</button>
-            </div>
           </div>
-          <prompt-review :project-id="currentProjectId" ref="promptReview"></prompt-review>
+          <prompt-review :project-id="currentProjectId"></prompt-review>
+          <div style="margin-top:20px;text-align:right;">
+            <button class="btn btn-primary" @click="onConfirmPrompts">确认提示词 →</button>
+          </div>
         </div>
 
-        <!-- 生成进度 -->
+        <!-- ============ 视频生成 ============ -->
         <div v-if="currentStep === 'generate'" class="step-panel">
           <div class="panel-header">
             <h2>⚡ 视频生成</h2>
-            <div class="panel-actions">
-              <button class="btn" @click="refreshTaskStatus">刷新状态</button>
-            </div>
           </div>
-          <generation-dashboard :project-id="currentProjectId" ref="generationDashboard"></generation-dashboard>
+          <generation-dashboard :project-id="currentProjectId"></generation-dashboard>
         </div>
+
       </main>
     </div>
 
